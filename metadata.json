@@ -1,0 +1,12 @@
+{
+    "databases": {
+        "historisk-samfund": {
+            "tables": {
+                "articles": {
+                    "sort": "year",
+                    "fts_table": "articles_fts",
+                }
+            }
+        }
+    }
+}

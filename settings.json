@@ -1,0 +1,14 @@
+{
+    "default_allow_sql": false,
+    "default_page_size": 20,
+    "sql_time_limit_ms": 3500,
+    "suggest_facets": false,
+    "allow_download": false,
+    "allow_facet": false,
+    "default_cache_ttl": 6000,
+    "cache_size_kb": 5000,
+    "allow_csv_stream": false,
+    "max_csv_mb": 0,
+    "truncate_cells_html": 0,
+    "force_https_urls": 1
+}
