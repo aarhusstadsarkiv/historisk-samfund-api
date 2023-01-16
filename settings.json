@@ -10,5 +10,5 @@
     "allow_csv_stream": false,
     "max_csv_mb": 0,
     "truncate_cells_html": 0,
-    "force_https_urls": 1
+    "force_https_urls": 0
 }
