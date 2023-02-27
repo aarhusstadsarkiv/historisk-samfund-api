@@ -1,5 +1,5 @@
 {
-    "default_allow_sql": false,
+    "default_allow_sql": true,
     "default_page_size": 20,
     "sql_time_limit_ms": 3500,
     "suggest_facets": false,

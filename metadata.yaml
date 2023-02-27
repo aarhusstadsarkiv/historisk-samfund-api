@@ -1,0 +1,51 @@
+databases:
+  historisk-samfund:
+    tables:
+      articles:
+        fts_table: articles_fts
+        sortable_columns:
+          - id
+          - year
+          - title
+      articles_fts:
+        sortable_columns:
+          - year
+          - title
+    queries:
+      search:
+        sql: |-
+          select
+            articles_fts.rowid,
+            articles.year,
+            articles.title,
+            articles_fts.author,
+            snippet(articles_fts, 5, '<b>', '</b>', '...', 60) text,
+            articles.filename
+          from
+            articles_fts
+            join articles articles on articles.id = articles_fts.rowid
+          where
+            articles_fts match escape_fts(:q)
+          order by
+            rank
+        sort: rank
+        sortable_columns:
+          - articles.year
+          - articles.title
+        title: Search articles
+      search2:
+        sql: |-
+          select
+            rowid,
+            year,
+            title,
+            author,
+            snippet(articles_fts, 5, '<b>', '</b>', '...', 60) text
+          from
+            articles_fts
+          where
+            articles_fts match escape_fts(:q)
+        sortable_columns:
+          - year
+          - title
+        title: Search articles
